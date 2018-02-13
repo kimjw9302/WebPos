@@ -92,7 +92,7 @@
                                     <a href="morris.html">품묵 별 매출현황</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">결제수단 별 매출현황</a>
+                                    <a href="PaymentRevenue.aspx">결제수단 별 매출현황</a>
                                 </li>
                                   <li>
                                     <a href="morris.html">객층분석</a>
@@ -104,7 +104,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> 재고 보기</a>
+                            <a href="StockSelect.aspx"><i class="fa fa-table fa-fw"></i> 재고 보기</a>
                         </li>                     
                     </ul>
                 </div>

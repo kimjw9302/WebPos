@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductsRevenue.aspx.cs" Inherits="WebProject.ProductsRevenue" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PaymentRevenue.aspx.cs" Inherits="WebProject.PaymentRevenue" %>
 
 <!DOCTYPE html>
 
@@ -40,7 +40,7 @@
        
 </script>
     <style>
-             #productsGridview {
+             #stockGridview {
             width:100%;
         }
         #page-wraaper {
@@ -326,7 +326,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header" id="h1text">품목 별 매출현황</h1>
+                    <h1 class="page-header" id="h1text">결제수단 별 매출현황</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -337,21 +337,12 @@
             <div class="row">
                 <!-- /.col-lg-8 -->
 
-                    <div class="panel panel-default">
-                        <div>
-                            &nbsp; &nbsp;
-                            <asp:TextBox runat="server" ID="DateSample" /><juice:Datepicker runat="server" TargetControlID="DateSample"/>
-                            <asp:Label ID="Label1" runat="server" Text="~"></asp:Label>
-                            <asp:TextBox ID="DateSample2" runat="server"></asp:TextBox>
-                            <juice:Datepicker runat="server" TargetControlID="DateSample2"/>
-                            <asp:Button ID="Button1" runat="server" Text="조회" Height="27px" Width="86px" OnClick="Button1_Click" />
-                        </div>
+                    <div class="panel panel-default"> 
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <!-- /.list-group -->
                             &nbsp;
-                            <h1 id="h1txt"> 날짜를 선택해주세요!</h1>
-                            <asp:GridView ID="productsGridview" runat="server" CellPadding="4" Width="100%"  AllowPaging="True"   onpageindexchanging="productsGridview_PageIndexChanging" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px">
+                            <asp:GridView ID="stockGridview" runat="server" CellPadding="4" Width="100%"  AllowPaging="True"   onpageindexchanging="stockGridview_PageIndexChanging" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px">
                                 <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                                 <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
                                 <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" BorderStyle="None" />
