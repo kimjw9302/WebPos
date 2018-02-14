@@ -283,7 +283,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 매출 현황<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">시간대 별 매출현황</a>
+                                    <a href="timeRevenue.aspx">시간대 별 매출현황</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">카테고리 별 매출현황</a>
