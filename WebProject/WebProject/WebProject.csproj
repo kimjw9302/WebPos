@@ -97,6 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllTotalRevenue.aspx" />
+    <Content Include="BoardList.aspx" />
+    <Content Include="BoardView.aspx" />
+    <Content Include="BoardWrite.aspx" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -203,9 +206,14 @@
     <Content Include="dist\css\sb-admin-2.min.css" />
     <Content Include="dist\js\sb-admin-2.js" />
     <Content Include="dist\js\sb-admin-2.min.js" />
+    <Content Include="images\apple-icon-180x180.png" />
     <Content Include="images\goodee24.png" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\GOODEE24 - Web Deploy.pubxml" />
+    <Content Include="images\Reply.png" />
+    <Content Include="upload\KakaoTalk_20171127_104855071.png" />
+    <Content Include="upload\kakaotalk_20171222_145751212_oXq_icon.ico" />
+    <Content Include="upload\ttt.png" />
     <Content Include="vendor\bootstrap-social\bootstrap-social.less" />
     <Content Include="vendor\bootstrap-social\bootstrap-social.scss" />
     <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -378,6 +386,27 @@
     </Compile>
     <Compile Include="AllTotalRevenue.aspx.designer.cs">
       <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BoardList.aspx.cs">
+      <DependentUpon>BoardList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BoardList.aspx.designer.cs">
+      <DependentUpon>BoardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BoardView.aspx.cs">
+      <DependentUpon>BoardView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BoardView.aspx.designer.cs">
+      <DependentUpon>BoardView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BoardWrite.aspx.cs">
+      <DependentUpon>BoardWrite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BoardWrite.aspx.designer.cs">
+      <DependentUpon>BoardWrite.aspx</DependentUpon>
     </Compile>
     <Compile Include="DBController.cs" />
     <Compile Include="Default.aspx.cs">

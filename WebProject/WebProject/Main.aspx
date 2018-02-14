@@ -277,7 +277,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 게시판으로</a>
+                            <a href="BoardList.aspx"><i class="fa fa-dashboard fa-fw"></i> 게시판으로</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 매출 현황<span class="fa arrow"></span></a>
