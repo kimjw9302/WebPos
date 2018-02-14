@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AllTotalRevenue.aspx.cs" Inherits="WebProject.AllTotalRevenue" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +14,7 @@
     <meta name="author" content=""/>
 
    
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>::Goodee24 - 관리자 홈페이지::</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./CSS/bootstrap.min.css" rel="stylesheet"/>
@@ -22,10 +24,11 @@
 
     <!-- Custom CSS -->
     <link href="./CSS/sb-admin-2.css" rel="stylesheet"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Morris Charts CSS -->
     <link href="./CSS/morris.css" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script src="../vendor/morrisjs/morris.min.js"></script>
+
    <!-- Bootstrap Core JavaScript -->
     <script src="./CSS/bootstrap.min.js"></script>
 
@@ -35,7 +38,7 @@
   <!-- Morris Charts JavaScript -->
     <script src="./CSS/raphael.min.js"></script>
     <script src="./CSS/morris.min.js"></script>
-    <script src="./CSS/morris-data.js"></script>
+
 
     <!-- Custom Theme JavaScript -->
     <script src="./CSS/sb-admin-2.js"></script>
@@ -65,9 +68,6 @@
                 <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
-
-          
-
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -77,19 +77,19 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 게시판으로</a>
+                            <a href="BoardList.aspx"><i class="fa fa-dashboard fa-fw"></i> 게시판으로</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 매출 현황<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">시간대 별 매출현황</a>
+                                    <a href="timeRevenue.aspx">시간대 별 매출현황</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">카테고리 별 매출현황</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">품묵 별 매출현황</a>
+                                    <a href="ProductsRevenue.aspx">품묵 별 매출현황</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">결제수단 별 매출현황</a>
@@ -98,7 +98,7 @@
                                     <a href="morris.html">객층분석</a>
                                 </li>
                                  <li>
-                                    <a href="morris.html">총매출 보기</a>
+                                    <a href="AllTotalRevenue.aspx">총매출 보기</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -117,36 +117,11 @@
             <div class="row">
                   <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tables</h1>
+                    <h1 class="page-header">총 매출 현황</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                              
-                            </table>
-                            <!-- /.table-responsive -->
-                     
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-            </div>
-            <!-- /.row -->
-            <div class="row">
+                    <div class="row">
                 <!-- /.col-lg-8 -->
 
                     <div class="panel panel-default">
@@ -177,6 +152,35 @@
       
             </div>
             <!-- /.row -->
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            총 매출 현황 테이블
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" id="tablediv">
+
+                            <!-- /.table-responsive -->
+                     
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+                  <div class="panel-heading">
+                            총 매출 현황 차트
+                        </div>
+            <div class="row" id ="morrisChart">
+                  
+
+            </div>
+            <!-- /.row -->
+        
         </div>
         <!-- /#page-wrapper -->
 
