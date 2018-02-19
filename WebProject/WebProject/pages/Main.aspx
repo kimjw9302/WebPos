@@ -25,7 +25,7 @@
     <!-- Morris Charts JavaScript -->
     <script src="../vendor/raphael/raphael.min.js"></script>
     <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
@@ -300,7 +300,7 @@
                             <!-- /input-group -->
                         </li>
                            <li>
-                            <a href="Main.aspxl"><i class="fa fa-dashboard fa-fw"></i> 대쉬보드</a>
+                            <a href="Main.aspx"><i class="fa fa-dashboard fa-fw"></i> 대쉬보드</a>
                         </li>
                         <li>
                             <a href="BoardList.aspx"><i class="fa fa-dashboard fa-fw"></i> 게시판으로</a>
@@ -309,11 +309,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 매출 현황<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-<<<<<<< HEAD:WebProject/WebProject/Main.aspx
                                     <a href="timeRevenue.aspx">시간대 별 매출현황</a>
-=======
-                                    <a href="#">시간대 별 매출현황</a>
->>>>>>> 20ba2c6636493021486b32e7edb3e465441ca975:WebProject/WebProject/pages/Main.aspx
                                 </li>
                                 <li>
                                     <a href="#l">카테고리 별 매출현황</a>
@@ -334,7 +330,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> 재고 보기</a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> 재고 보기</a>
                         </li>                     
                     </ul>
                 </div>
@@ -360,6 +356,7 @@
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
+                                        <div>게시판 새 글 수</div>
                                     <div class="huge">26</div>
                                     <div>New Comments!</div>
                                 </div>
@@ -382,6 +379,7 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
+                                           <div>발주 신청 현황</div>
                                     <div class="huge">12</div>
                                     <div>New Tasks!</div>
                                 </div>
@@ -404,6 +402,7 @@
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
+                                          <div>하루 이용객</div>
                                     <div class="huge">124</div>
                                     <div>New Orders!</div>
                                 </div>
@@ -426,8 +425,10 @@
                                     <i class="fa fa-support fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
+                                       <div>재고 부족 상품</div>
+                                    <div class="huge"> <asp:Label ID="lblProCnt" runat="server" Text="Label"></asp:Label></div>
+                                    <div>
+                                        <asp:Label ID="lblProducts" runat="server" Text="Label"></asp:Label></div>
                                 </div>
                             </div>
                         </div>
@@ -446,30 +447,19 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 이번주 매출 그래프
                             <div class="pull-right">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                        Actions
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#">Action</a>
-                                        </li>
-                                        <li><a href="#">Another action</a>
-                                        </li>
-                                        <li><a href="#">Something else here</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a>
-                                        </li>
-                                    </ul>
+                                    <button type="button" class="btn btn-default btn-xs" >
+                                    <a href="AllTotalRevenue.aspx">상세보기</a>   
+                               
+                                    </button>                                
                                 </div>
                             </div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div id="morris-area-chart"></div>
+                            <div id="morrisChart"></div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -693,7 +683,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                            <i class="fa fa-bell fa-fw"></i>오늘의 시간에 따른 매출
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

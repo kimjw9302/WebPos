@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -18,15 +19,27 @@ namespace WebProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.lblUserID.Text = Context.User.Identity.Name + " 님 환영합니다";
-            //if ()
-            //{
-            //}
-            //else
-            //{
-            //}
-        }
+            this.lblUserID.Text = Session["userName"].ToString() + " 님 환영합니다";
+            if (!IsPostBack)
+            {
+                this.modeTxt.Text = "관리자 모드로 홈페이지를 이용중입니다.";
 
+            }
+            else
+            {
+
+
+            }
+        }
+        protected void btn_Logout_Click(object sender, EventArgs e)
+        {
+            Session["userGrade"] = null;
+            Session["userName"] = null;
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
+
+
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
             makeGridView();

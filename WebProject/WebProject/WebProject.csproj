@@ -96,7 +96,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AllTotalRevenue.aspx" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -206,7 +205,11 @@
     <Content Include="images\goodee24.png" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\GOODEE24 - Web Deploy.pubxml" />
-    <Content Include="timeRevenue.aspx" />
+    <Content Include="pages\AllTotalRevenue.aspx" />
+    <Content Include="pages\Default.aspx" />
+    <Content Include="pages\Main.aspx" />
+    <Content Include="pages\ProductsRevenue.aspx" />
+    <Content Include="pages\timeRevenue.aspx" />
     <Content Include="vendor\bootstrap-social\bootstrap-social.less" />
     <Content Include="vendor\bootstrap-social\bootstrap-social.scss" />
     <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -262,10 +265,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
     <Content Include="js\sb-admin-2.js" />
-    <Content Include="Main.aspx" />
-    <Content Include="ProductsRevenue.aspx" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <None Include="Scripts\amplify-vsdoc.js" />
     <Content Include="Scripts\amplify.js" />
@@ -375,37 +375,41 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllTotalRevenue.aspx.cs">
-      <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AllTotalRevenue.aspx.designer.cs">
-      <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DBController.cs" />
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="pages\AllTotalRevenue.aspx.cs">
+      <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AllTotalRevenue.aspx.designer.cs">
+      <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="pages\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Main.aspx.cs">
+    <Compile Include="pages\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Main.aspx.designer.cs">
-      <DependentUpon>Main.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ProductsRevenue.aspx.cs">
+    <Compile Include="pages\ProductsRevenue.aspx.cs">
       <DependentUpon>ProductsRevenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductsRevenue.aspx.designer.cs">
+    <Compile Include="pages\ProductsRevenue.aspx.designer.cs">
       <DependentUpon>ProductsRevenue.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="timeRevenue.aspx.cs">
+    <Compile Include="pages\timeRevenue.aspx.cs">
       <DependentUpon>timeRevenue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="timeRevenue.aspx.designer.cs">
+    <Compile Include="pages\timeRevenue.aspx.designer.cs">
       <DependentUpon>timeRevenue.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
