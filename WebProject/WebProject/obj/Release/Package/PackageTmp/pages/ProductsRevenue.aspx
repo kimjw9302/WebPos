@@ -14,31 +14,43 @@
    
     <title>::Goodee24 - 관리자 홈페이지::</title>
 
-      <!-- Bootstrap Core CSS -->
-    <link href="./CSS/bootstrap.min.css" rel="stylesheet"/>
+  <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
 
-    <!-- MetisMenu CSS -->
-<%--    <link href="./CSS/metisMenu.min.css" rel="stylesheet"/>--%>
-
-    <!-- Custom CSS -->
-    <link href="./CSS/sb-admin-2.css" rel="stylesheet"/>
-
-    <!-- Morris Charts CSS -->
-    <link href="./CSS/morris.css" rel="stylesheet"/>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
 
-<%--
+<%--    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>--%>
+        <!-- DataTables JavaScript -->
+<%--    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>--%>
+  
     <!-- Custom Theme JavaScript -->
-    <script src="./CSS/sb-admin-2.js"></script>--%>
-    <script>
+   <%-- <script src="../dist/js/sb-admin-2.js"></script--%>>
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 
-       
-</script>
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet"/>
+        <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet"/>
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet"/>
+
+        <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet"/>
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet"/>
     <style>
              #productsGridview {
             width:100%;
@@ -46,11 +58,17 @@
         #page-wraaper {
             min-height:750px;
         }
+               #lblUserID {
+            float:left;
+            margin-top:8px;
+        }
+        #btn_Logout {
+ 
+
+        }
     </style>
 </head>
 <body>
-
-  
     <form id="form1" runat="server">
           <asp:ScriptManager ID="_Script" runat="server" ></asp:ScriptManager>
 
@@ -65,256 +83,56 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                &nbsp;<a class="navbar-brand" href="Main.aspx"><asp:Image ID="Image1" runat="server" Width="108px" Height="280%" src="./images/goodee24.png"/></a></div>
+             <a class="navbar-brand" href="Main.aspx" style="color:#FF5E00" >Goodee 24</a></div>
             <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                <ul class="nav navbar-top-links navbar-right" style="margin-top:15px;">
+                    <li>
+               
+                        <asp:Label ID="modeTxt" runat="server" Text="모드 상태"></asp:Label>
+                    
+                           </li>  
                     </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">40% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">20% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only">20% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">80% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-tasks -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li >                       
-       
+                       <li  style="padding: 10px 5px">                     
                             <asp:Label ID="lblUserID" runat="server" Font-Size="Medium"></asp:Label>
+                             <asp:Button ID="btn_Logout"  class="btn btn-default" runat="server" Text="Logout" OnClick="btn_Logout_Click"/>
                             <!-- /input-group -->
+                      </li>
+                           <li>
+                            <a href="Main.aspx"><i class="fa fa-dashboard fa-fw"></i> 대쉬보드</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 게시판으로</a>
+                            <a href="BoardList.aspx"><i class="fa fa-dashboard fa-fw"></i> 게시판으로</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 매출 현황<span class="fa arrow"></span></a>
+                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 매출 현황<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">시간대 별 매출현황</a>
+                                    <a href="#">시간대 별 매출현황</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">카테고리 별 매출현황</a>
+                                    <a href="#l">카테고리 별 매출현황</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">품묵 별 매출현황</a>
+                                    <a href="ProductsRevenue.aspx">품목 별 매출현황</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">결제수단 별 매출현황</a>
+                                    <a href="#l">결제수단 별 매출현황</a>
                                 </li>
                                   <li>
-                                    <a href="morris.html">객층분석</a>
+                                    <a href="#">객층분석</a>
                                 </li>
                                  <li>
-                                      <a href="AllTotalRevenue.aspx">총매출 보기</a>
+                                    <a href="AllTotalRevenue.aspx">총매출 보기</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> 재고 보기</a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> 재고 보기</a>
                         </li>                     
                     </ul>
                 </div>
@@ -344,25 +162,25 @@
                             <asp:Label ID="Label1" runat="server" Text="~"></asp:Label>
                             <asp:TextBox ID="DateSample2" runat="server"></asp:TextBox>
                             <juice:Datepicker runat="server" TargetControlID="DateSample2"/>
-                            <asp:Button ID="Button1" runat="server" Text="조회" Height="27px" Width="86px" OnClick="Button1_Click" />
+                            <asp:Button ID="Button1" runat="server" Text="조회" Height="27px" Width="86px" OnClick="Button1_Click"  />
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body">
+                 
                             <!-- /.list-group -->
                             &nbsp;
                             <h1 id="h1txt"> 날짜를 선택해주세요!</h1>
-                            <asp:GridView ID="productsGridview" runat="server" CellPadding="4" Width="100%"  AllowPaging="True"   onpageindexchanging="productsGridview_PageIndexChanging" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px">
-                                <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                                <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                                <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" BorderStyle="None" />
-                                <RowStyle BackColor="White" ForeColor="#003399" />
-                                <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                                <SortedAscendingCellStyle BackColor="#EDF6F6" />
-                                <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-                                <SortedDescendingCellStyle BackColor="#D6DFDF" />
-                                <SortedDescendingHeaderStyle BackColor="#002876" />
-                            </asp:GridView>
+                         <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            날짜에 따른 품목 테이블
                         </div>
+                            <div class="panel-body" id="tablediv">
+                                   
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
@@ -375,8 +193,15 @@
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
+         <!-- DataTables JavaScript -->
+              
 
     </div>
     </form>
+       
+
+
+
+
 </body>
 </html>

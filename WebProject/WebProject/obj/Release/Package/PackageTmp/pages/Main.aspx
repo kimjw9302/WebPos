@@ -45,12 +45,18 @@
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
     <style>
+        #lblUserID {
+            float:left;
+            margin-top:8px;
+        }
+        #btn_Logout {
+ 
 
-
+        }
     </style>
 </head>
 <body>
-
+            <form runat ="server" method="get">     
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -63,9 +69,16 @@
                 </button>
                 <a class="navbar-brand" href="Main.aspx" style="color:#FF5E00" >Goodee 24</a>
             </div>
+                <ul class="nav navbar-top-links navbar-right" style="margin-top:15px;">
+                    <li>
+               
+                        <asp:Label ID="modeTxt" runat="server" Text="모드 상태"></asp:Label>
+                    
+                           </li>  
+                    </ul>
             <%--<!-- /.navbar-header --- 여기  -->
 
-            <ul class="nav navbar-top-links navbar-right">
+        
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -279,14 +292,15 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li  style="padding: 10px 5px">                       
-                            <asp:Label ID="lblUserID" runat="server" Font-Size="Medium" Width="70%"></asp:Label>
-                            
-                            <span style="float:right">
-                                <asp:ImageButton ID="ImageButton1" runat="server" class="fa fa-sign-out fa-fw"/>
+                            <asp:Label ID="lblUserID" runat="server" Font-Size="Medium" Width="70%" ></asp:Label>
+                                   
+                                <asp:Button ID="btn_Logout"  class="btn btn-default" runat="server" Text="Logout" OnClick="btn_Logout_Click"/>
+                          
+                       
                             <!-- /input-group -->
                         </li>
                            <li>
-                            <a href="Main.aspxl"><i class="fa fa-dashboard fa-fw"></i> 대쉬보드</a>
+                            <a href="Main.aspx"><i class="fa fa-dashboard fa-fw"></i> 대쉬보드</a>
                         </li>
                         <li>
                             <a href="BoardList.aspx"><i class="fa fa-dashboard fa-fw"></i> 게시판으로</a>
@@ -316,7 +330,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> 재고 보기</a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> 재고 보기</a>
                         </li>                     
                     </ul>
                 </div>
@@ -868,6 +882,7 @@
         <!-- /#page-wrapper -->
 
     </div>
+      </form>
     <!-- /#wrapper -->
 </body>
 </html>
