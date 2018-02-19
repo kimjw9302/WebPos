@@ -78,6 +78,7 @@
     <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -207,6 +208,7 @@
     <None Include="Properties\PublishProfiles\GOODEE24 - Web Deploy.pubxml" />
     <Content Include="pages\AllTotalRevenue.aspx" />
     <Content Include="pages\Default.aspx" />
+    <Content Include="pages\genderChart.aspx" />
     <Content Include="pages\Main.aspx" />
     <Content Include="pages\ProductsRevenue.aspx" />
     <Content Include="pages\timeRevenue.aspx" />
@@ -389,6 +391,13 @@
     </Compile>
     <Compile Include="pages\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\genderChart.aspx.cs">
+      <DependentUpon>genderChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\genderChart.aspx.designer.cs">
+      <DependentUpon>genderChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>

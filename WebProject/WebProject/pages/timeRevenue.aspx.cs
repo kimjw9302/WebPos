@@ -20,41 +20,18 @@ namespace WebProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //// Define the name and type of the client scripts on the page.
-            //String csname1 = "PopupScript";
-            //String csname2 = "ButtonClickScript";
-            //Type cstype = this.GetType();
-
-            //// Get a ClientScriptManager reference from the Page class.
-            //ClientScriptManager cs = Page.ClientScript;
-
-            //// Check to see if the startup script is already registered.
-            //if (!cs.IsStartupScriptRegistered(cstype, csname1))
-            //{
-            //    String cstext1 = "alert('Hello World');";
-            //    cs.RegisterStartupScript(cstype, csname1, cstext1, true);
-            //}
-
-            //// Check to see if the client script is already registered.
-            //if (!cs.IsClientScriptBlockRegistered(cstype, csname2))
-            //{
-            //    StringBuilder cstext2 = new StringBuilder();
-            //    cstext2.Append("<script type=\"text/javascript\"> function DoClick() {");
-            //    cstext2.Append("Form1.Message.value='Text from client script.'} </");
-            //    cstext2.Append("script>");
-            //    cs.RegisterClientScriptBlock(cstype, csname2, cstext2.ToString(), false);
-            //}
-            makeTimeRevenue();
+         
+            if (!IsPostBack)
+            {
+                DateSample.Text = DateTime.Now.ToShortDateString();
+                DateSample2.Text = DateTime.Now.ToShortDateString();
+                makeTimeRevenue();
+            } 
         }
 
-        private void makeTimeRevenue()
+        public void makeTimeRevenue()
         {
-
-
-        }
-      
-        protected void btnView_Click(object sender, EventArgs e)
-        {
+           
             DataTable table = new DataTable();
             table.Columns.Add("시간대");
             table.Columns.Add("건수");
@@ -69,6 +46,8 @@ namespace WebProject
 
                 con.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
+
+               
                 cmd.Parameters.AddWithValue("@startDate", DateSample.Text + " 00:00:00");
                 cmd.Parameters.AddWithValue("@endDate", DateSample2.Text + " 23:59:59");
 
@@ -187,10 +166,7 @@ namespace WebProject
 
                     }
                     #endregion
-
-
-                
-
+                    
                 }
                 for (int i = 0; i < 24; i++)
                 {
@@ -202,16 +178,47 @@ namespace WebProject
                     DataRow dr = table.NewRow();
 
                     dr["시간대"] = s + (i).ToString() + "~" + (i + 1);
-                    dr["건수"] = count[i].ToString();
-                    dr["총 금액"] = (int)money[i];
+                    if (count[i].ToString() == "0")
+                    {
+                        dr["건수"] = "-";
+                    }
+                    else
+                    {
+                        dr["건수"] = count[i].ToString() + "건";
+                    }
+                    
+
+                    if (money[i].ToString() == "0")
+                    {
+                        dr["총 금액"] = "-";
+                    }
+                    else
+                    {
+                        dr["총 금액"] = DataFormat((int)money[i]);
+                    }
+                   
 
                     table.Rows.Add(dr);
 
                 }
                 timeGridview.DataSource = table;
                 timeGridview.DataBind();
+                
                 con.Close();
             }
+
         }
+
+        private string DataFormat(int Date)
+        {
+            return string.Format("{0:0,0}", Date) + "원";
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            makeTimeRevenue();
+        }
+
+       
     }
 }
