@@ -377,7 +377,6 @@
   <ItemGroup>
     <Compile Include="AllTotalRevenue.aspx.cs">
       <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AllTotalRevenue.aspx.designer.cs">
       <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
@@ -385,21 +384,18 @@
     <Compile Include="DBController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductsRevenue.aspx.cs">
       <DependentUpon>ProductsRevenue.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProductsRevenue.aspx.designer.cs">
       <DependentUpon>ProductsRevenue.aspx</DependentUpon>
