@@ -40,30 +40,47 @@ namespace WebProject {
         protected global::System.Web.UI.WebControls.Button btn_Logout;
         
         /// <summary>
-        /// lblProCnt 컨트롤입니다.
+        /// lblWriteCnt 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProCnt;
+        protected global::System.Web.UI.WebControls.Label lblWriteCnt;
         
         /// <summary>
-        /// lblProducts 컨트롤입니다.
+        /// lblOrderCnt 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrderCnt;
+        
+        /// <summary>
+        /// lblCusCnt 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Label lblProducts;
         
         /// <summary>
         /// msg 컨트롤입니다.
+=======
+        protected global::System.Web.UI.WebControls.Label lblCusCnt;
+        
+        /// <summary>
+        /// lblProCnt 컨트롤입니다.
+>>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Label msg;
         
         /// <summary>
@@ -74,5 +91,8 @@ namespace WebProject {
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView timeGridview;
+=======
+        protected global::System.Web.UI.WebControls.Label lblProCnt;
+>>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e
     }
 }

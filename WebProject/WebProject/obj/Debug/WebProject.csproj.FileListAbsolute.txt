@@ -57,10 +57,10 @@ C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\bin\ko\System.Spatial.
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\bin\ru\System.Spatial.resources.dll
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.csprojResolveAssemblyReference.cache
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.csproj.CoreCompileInputs.cache
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.dll
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.pdb
+<<<<<<< HEAD
 C:\Users\gd3-1\Documents\WebPos\WebProject\WebProject\bin\WebProject.dll.config
 C:\Users\gd3-1\Documents\WebPos\WebProject\WebProject\bin\WebProject.dll
 C:\Users\gd3-1\Documents\WebPos\WebProject\WebProject\bin\WebProject.pdb
@@ -124,3 +124,6 @@ C:\Users\gd3-1\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.cspro
 C:\Users\gd3-1\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.csproj.CoreCompileInputs.cache
 C:\Users\gd3-1\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.dll
 C:\Users\gd3-1\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.pdb
+=======
+C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.csprojResolveAssemblyReference.cache
+>>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e

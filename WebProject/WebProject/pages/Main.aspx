@@ -357,12 +357,13 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                         <div>게시판 새 글 수</div>
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div class="huge">
+                                        <asp:Label ID="lblWriteCnt" runat="server"></asp:Label></div>
+                
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="~/BoardList.aspx">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -376,16 +377,17 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
+                                    <i class="fa  fa-money  fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                           <div>발주 신청 현황</div>
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
+                                           <div>이번달 매출 금액</div>
+                                    <div class="huge" style="font-size:23px;height:57px">
+                                        <asp:Label ID="lblOrderCnt" runat="server" ></asp:Label></div>
+        
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="~/AllTotalRevenue.aspx">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -403,8 +405,8 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                           <div>하루 이용객</div>
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
+                                    <div class="huge">
+                                        <asp:Label ID="lblCusCnt" runat="server"></asp:Label></div>
                                 </div>
                             </div>
                         </div>
@@ -426,9 +428,8 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                        <div>재고 부족 상품</div>
-                                    <div class="huge"> <asp:Label ID="lblProCnt" runat="server" Text="Label"></asp:Label></div>
-                                    <div>
-                                        <asp:Label ID="lblProducts" runat="server" Text="Label"></asp:Label></div>
+                                    <div class="huge"> <asp:Label ID="lblProCnt" runat="server" ></asp:Label></div>
+
                                 </div>
                             </div>
                         </div>
@@ -463,6 +464,7 @@
                         </div>
                         <!-- /.panel-body -->
                     </div>
+<<<<<<< HEAD
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -488,6 +490,18 @@
                     </div>
                     <!-- /.panel -->
                   
+=======
+                  
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                          
+                        </div>
+>>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
@@ -511,11 +525,20 @@
                         </div>
                         <!-- /.panel-body -->
                     </div>
+<<<<<<< HEAD
                 
                     <!-- /.panel .chat-panel -->
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
+=======
+                    <!-- /.panel -->
+                   
+               
+                       
+                      
+            
+>>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
