@@ -44,9 +44,10 @@ namespace WebProject
 
             con = DBController.Instance();
       
-            con.Open();
+            
             using (var cmd = new SqlCommand("FirstLoginSelect", con))
             {
+                con.Open();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(userId));
                 cmd.Parameters.AddWithValue("@StorePW", int.Parse(storePw));

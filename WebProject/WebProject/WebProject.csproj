@@ -78,7 +78,6 @@
     <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -97,14 +96,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data\flot-data.js" />
-    <Content Include="data\morris-data.js" />
-    <Content Include="dist\css\sb-admin-2.css" />
-    <Content Include="dist\css\sb-admin-2.min.css" />
-    <Content Include="dist\js\sb-admin-2.js" />
-    <Content Include="dist\js\sb-admin-2.min.js" />
-    <Content Include="js\sb-admin-2.js" />
-    <Content Include="pages\AllTotalRevenue.aspx" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -198,11 +189,27 @@
     <Content Include="Content\themes\Supercharged\images\ui-icons_ffbc0f_256x240.png" />
     <Content Include="Content\themes\Supercharged\images\ui-icons_ffc905_256x240.png" />
     <Content Include="Content\themes\Supercharged\jquery-ui-1.9.0.custom.css" />
-    <Content Include="less\mixins.less" />
-    <Content Include="less\sb-admin-2.less" />
-    <Content Include="less\variables.less" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\metisMenu.min.css" />
+    <Content Include="CSS\metisMenu.min.js" />
+    <Content Include="CSS\morris.css" />
+    <Content Include="CSS\morris.min.js" />
+    <Content Include="CSS\raphael.min.js" />
+    <Content Include="CSS\sb-admin-2.js" />
+    <Content Include="data\flot-data.js" />
+    <Content Include="data\morris-data.js" />
+    <Content Include="dist\css\sb-admin-2.css" />
+    <Content Include="dist\css\sb-admin-2.min.css" />
+    <Content Include="dist\js\sb-admin-2.js" />
+    <Content Include="dist\js\sb-admin-2.min.js" />
+    <Content Include="images\goodee24.png" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\GOODEE24 - Web Deploy.pubxml" />
+    <Content Include="pages\AllTotalRevenue.aspx" />
+    <Content Include="pages\Default.aspx" />
+    <Content Include="pages\Main.aspx" />
+    <Content Include="pages\ProductsRevenue.aspx" />
+    <Content Include="pages\timeRevenue.aspx" />
     <Content Include="vendor\bootstrap-social\bootstrap-social.less" />
     <Content Include="vendor\bootstrap-social\bootstrap-social.scss" />
     <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -258,9 +265,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="pages\Default.aspx" />
-    <Content Include="pages\Main.aspx" />
-    <Content Include="pages\ProductsRevenue.aspx" />
+    <Content Include="js\sb-admin-2.js" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <None Include="Scripts\amplify-vsdoc.js" />
     <Content Include="Scripts\amplify.js" />
@@ -365,9 +370,12 @@
     <Content Include="vendor\morrisjs\morris.min.js" />
     <Content Include="vendor\raphael\raphael.js" />
     <Content Include="vendor\raphael\raphael.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBController.cs" />
     <Compile Include="pages\AllTotalRevenue.aspx.cs">
       <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -375,7 +383,6 @@
     <Compile Include="pages\AllTotalRevenue.aspx.designer.cs">
       <DependentUpon>AllTotalRevenue.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DBController.cs" />
     <Compile Include="pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -398,6 +405,13 @@
       <DependentUpon>ProductsRevenue.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pages\timeRevenue.aspx.cs">
+      <DependentUpon>timeRevenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\timeRevenue.aspx.designer.cs">
+      <DependentUpon>timeRevenue.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
