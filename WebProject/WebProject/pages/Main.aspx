@@ -464,17 +464,17 @@
                         </div>
                         <!-- /.panel-body -->
                     </div>
-<<<<<<< HEAD
+                  
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> 나이대별 매출현황 & 성별 매출현황
+                            <i class="fa fa-clock-o fa-fw"></i> 나이대별 & 성별 비율
                             <div class="pull-right">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                        Actions
-                                        <span class="caret"></span>
-                                    </button>
+                                    <button type="button" class="btn btn-default btn-xs" >
+                                    <a href="genderChart.aspx">상세보기</a>   
+                               
+                                    </button>                                
                                 </div>
                             </div>
                         </div>
@@ -483,25 +483,10 @@
                             <div class="row col-lg-6" id="ctGender" style="height: 500px; margin-top: 150px">
                                 <asp:Label CssClass="col-lg-6 text-center" runat="server" ID="msg" Font-Size="XX-Large"></asp:Label>
                             </div>
+
                             <div class="row col-lg-6" id="ctAge" style="height: 500px; margin-top: 150px">
                             </div>
                         </div>
-                        
-                    </div>
-                    <!-- /.panel -->
-                  
-=======
-                  
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                          
-                        </div>
->>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
@@ -521,24 +506,12 @@
                                     </asp:GridView>
                             </div>
                             <!-- /.list-group -->
-                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                            <a href="timeRevenue.aspx" class="btn btn-default btn-block" >상세보기</a>
                         </div>
                         <!-- /.panel-body -->
                     </div>
-<<<<<<< HEAD
-                
-                    <!-- /.panel .chat-panel -->
-                </div>
-                <!-- /.col-lg-4 -->
-            </div>
-=======
-                    <!-- /.panel -->
+
                    
-               
-                       
-                      
-            
->>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->

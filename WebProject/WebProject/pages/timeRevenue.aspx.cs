@@ -28,19 +28,8 @@ namespace WebProject
                 makeTimeRevenue();
             } 
         }
-<<<<<<< HEAD
 
         public void makeTimeRevenue()
-=======
- 
-        private void makeTimeRevenue()
-        {
-
-
-        }
-      
-        protected void btnView_Click(object sender, EventArgs e)
->>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e
         {
            
             DataTable table = new DataTable();

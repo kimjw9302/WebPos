@@ -43,7 +43,7 @@ namespace WebProject.pages
                 con.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@startDate", DateSample.Text + " 00:00:00");
-                cmd.Parameters.AddWithValue("@endDate", DateSample2.Text + " 00:00:00");
+                cmd.Parameters.AddWithValue("@endDate", DateSample2.Text + " 23:59:59");
 
                 adapter = new SqlDataAdapter();
                 ds = new DataSet();
@@ -115,6 +115,7 @@ namespace WebProject.pages
             age += "y: '50대 이상', m:" + m[4].ToString() + ", w:" + w[4].ToString() + "}], ";
             age += "xkey : 'y',parseTime: false, ";
             age += "ykeys : ['m', 'w'],";
+            age += "ymax: 100,";
             age += "labels: [ '남자', '여자' ],";
             age += "hidehover: 'auto',";
             age += "resize : true})});";
@@ -132,7 +133,7 @@ namespace WebProject.pages
                 con.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@startDate", DateSample.Text + " 00:00:00");
-                cmd.Parameters.AddWithValue("@endDate", DateSample2.Text + " 00:00:00");
+                cmd.Parameters.AddWithValue("@endDate", DateSample2.Text + " 23:59:59");
 
                 ds = new DataSet();
                 adapter = new SqlDataAdapter(cmd);

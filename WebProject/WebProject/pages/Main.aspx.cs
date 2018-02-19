@@ -40,14 +40,12 @@ namespace WebProject
                 // LoadProducts();
                 LoadCheckPro();
                 LoadWeekChart();
-<<<<<<< HEAD
                 LoadTime();
                 LoadChart();
-=======
                 PersonCheck();
                 LoadWrite();
                 LoadOrderCnt();
->>>>>>> 2abeead851b367c73019ee56c4fff003fc59e86e
+
             }
             else
             {
@@ -79,7 +77,7 @@ namespace WebProject
                     }
                     
                     string a = cmd.ExecuteScalar().ToString();
-                    this.lblOrderCnt.Text = StrForm.Formating(a)+"원";
+                    //this.lblOrderCnt.Text = StrForm.Formating(a)+"원";
                 }
                 con.Close();
             }
@@ -142,7 +140,7 @@ namespace WebProject
                 woman = 0;
                 if (man == 0 && woman == 0)
                 {
-                    this.msg.Text = "데이터가 없습니다.";
+                    //this.msg.Text = "데이터가 없습니다.";
                 }
 
                 foreach (var item in rows)
@@ -258,7 +256,9 @@ namespace WebProject
             age += "y: '50대 이상', m:" + m[4].ToString() + ", w:" + w[4].ToString() + "}], ";
             age += "xkey : 'y',parseTime: false, ";
             age += "ykeys : ['m', 'w'],";
+            age += "ymax: 100,";
             age += "labels: [ '남자', '여자' ],";
+            age += "barColors: ['#4286f4', '#edbbd3'],";
             age += "hidehover: 'auto',";
             age += "resize : true})});";
 
