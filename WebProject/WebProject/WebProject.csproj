@@ -189,13 +189,6 @@
     <Content Include="Content\themes\Supercharged\images\ui-icons_ffbc0f_256x240.png" />
     <Content Include="Content\themes\Supercharged\images\ui-icons_ffc905_256x240.png" />
     <Content Include="Content\themes\Supercharged\jquery-ui-1.9.0.custom.css" />
-    <Content Include="CSS\bootstrap.min.css" />
-    <Content Include="CSS\metisMenu.min.css" />
-    <Content Include="CSS\metisMenu.min.js" />
-    <Content Include="CSS\morris.css" />
-    <Content Include="CSS\morris.min.js" />
-    <Content Include="CSS\raphael.min.js" />
-    <Content Include="CSS\sb-admin-2.js" />
     <Content Include="data\flot-data.js" />
     <Content Include="data\morris-data.js" />
     <Content Include="dist\css\sb-admin-2.css" />
@@ -412,6 +405,7 @@
     <Compile Include="pages\timeRevenue.aspx.designer.cs">
       <DependentUpon>timeRevenue.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StrForm.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

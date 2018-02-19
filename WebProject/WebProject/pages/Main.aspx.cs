@@ -24,11 +24,73 @@ namespace WebProject
 
                 this.modeTxt.Text = "관리자 모드로 홈페이지를 이용중입니다.";
                 // LoadProducts();
+                LoadCheckPro();
                 LoadWeekChart();
+                PersonCheck();
+                LoadWrite();
+                LoadOrderCnt();
             }
             else
             {
                 Response.Redirect("~/BoardList.aspx");
+            }
+        }
+        public void LoadOrderCnt()
+        {
+            con = DBController.Instance();
+            try
+            {
+                con.Open();
+
+                using (var cmd = new SqlCommand("CheckOrderCnt", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DateTime current = DateTime.Now;
+                    string year = current.Year.ToString();
+                    string month = current.Month.ToString();
+                    
+                    cmd.Parameters.AddWithValue("sdate", DateTime.Now.Year);
+                    if (DateTime.Now.Month.ToString().Length==1)
+                    {
+                        cmd.Parameters.AddWithValue("edate","0"+ DateTime.Now.Month);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("edate", DateTime.Now.Month);
+                    }
+                    
+                    string a = cmd.ExecuteScalar().ToString();
+                    this.lblOrderCnt.Text = StrForm.Formating(a)+"원";
+                }
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+        public void LoadWrite()
+        {
+            con = DBController.Instance();
+            try
+            {
+                con.Open();
+
+                using (var cmd = new SqlCommand("CheckBoardCnt", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("sdate", DateTime.Now.ToShortDateString() + " 00:00:00");
+                    cmd.Parameters.AddWithValue("edate", DateTime.Now.ToShortDateString() + " 23:59:59");
+                    string a = cmd.ExecuteScalar().ToString();
+                    this.lblWriteCnt.Text = a;
+                }
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+
             }
         }
 
@@ -63,7 +125,40 @@ namespace WebProject
 
             return currnetDate;
         }
+        public void LoadCheckPro()
+        {           
+            con = DBController.Instance();
+            try
+            {
+                con.Open();
+             
+                using (var cmd = new SqlCommand("LoadCheckProducts",con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();                    
+                    SqlDataAdapter sda = new SqlDataAdapter();
+                    sda.SelectCommand = cmd;
+                    sda.Fill(ds);
 
+                    if (ds.Tables[0].Rows.Count == 0)
+                    {
+                        this.lblProCnt.Text = "0";
+                        con.Close();
+                    }
+                    else
+                    {
+                        this.lblProCnt.Text = ds.Tables[0].Rows.Count.ToString();
+                        con.Close();
+                        
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            
+            }
+        }
         public void LoadWeekChart()
         {
 
@@ -76,9 +171,8 @@ namespace WebProject
             row1_sum = row2_sum = row3_sum = 0;
             DataSet ds = new DataSet();
             dt1 = new DataTable();
-
+            con.Close();
             con.Open();
-
             DateTime temp = sdate;
             dt1.Columns.Add("분류");
 
@@ -279,46 +373,69 @@ namespace WebProject
 
             ClientScript.RegisterClientScriptBlock(this.GetType(), "stablediv", chart, true);
         }
-
-        public void LoadProducts()
+        public void PersonCheck()
         {
-            // 카운트 라벨 : lblProCnt
-            // 재고 상품명 라벨 : lblProducts
-
             con = DBController.Instance();
-            con.Open();
-            using (var cmd = new SqlCommand("LoadCheckProducts", con))
+            try
             {
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
 
-                using (var sdr = cmd.ExecuteReader())
+                using (var cmd = new SqlCommand("LoadPersonCheck", con))
                 {
-                    if (sdr.HasRows)
-                    {
-
-                        while (sdr.Read())
-                        {
-
-
-                            lblProducts.Text = sdr["상품명"].ToString() +" ,  재고수 : "+sdr["재고수"].ToString()+"\r\n";
-
-
-
-                        }
-                        lblProCnt.Text = sdr.FieldCount.ToString();
-
-                    }
-                    else
-                    {
-                        lblProCnt.Text = "0";
-                        lblProducts.Text = "부족한 상품이 없습니다.";
-                    }                   
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("sdate",DateTime.Now.ToShortDateString()+" 00:00:00");
+                    cmd.Parameters.AddWithValue("edate", DateTime.Now.ToShortDateString() + " 23:59:59");
+                    string a = cmd.ExecuteScalar().ToString();
+                    this.lblCusCnt.Text = a;
                 }
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+
             }
 
-            con.Close();
-
         }
+        //public void LoadProducts()
+        //{
+        //    // 카운트 라벨 : lblProCnt
+        //    // 재고 상품명 라벨 : lblProducts
+
+        //    con = DBController.Instance();
+        //    con.Open();
+        //    using (var cmd = new SqlCommand("LoadCheckProducts", con))
+        //    {
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+        //        using (var sdr = cmd.ExecuteReader())
+        //        {
+        //            if (sdr.HasRows)
+        //            {
+
+        //                while (sdr.Read())
+        //                {
+
+
+        //                    lblProducts.Text = sdr["상품명"].ToString() +" ,  재고수 : "+sdr["재고수"].ToString()+"\r\n";
+
+
+
+        //                }
+        //                lblProCnt.Text = sdr.FieldCount.ToString();
+
+        //            }
+        //            else
+        //            {
+        //                lblProCnt.Text = "0";
+        //                lblProducts.Text = "부족한 상품이 없습니다.";
+        //            }                   
+        //        }
+        //    }
+
+        //    con.Close();
+
+        //}
         protected void btn_Logout_Click(object sender, EventArgs e)
         {
             Session["userGrade"] = null;

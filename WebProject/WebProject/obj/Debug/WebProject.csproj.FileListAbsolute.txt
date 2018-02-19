@@ -57,7 +57,7 @@ C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\bin\ko\System.Spatial.
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\bin\ru\System.Spatial.resources.dll
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.csprojResolveAssemblyReference.cache
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.csproj.CoreCompileInputs.cache
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.dll
 C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.pdb
+C:\Users\김재웅\Documents\WebPos\WebProject\WebProject\obj\Debug\WebProject.csprojResolveAssemblyReference.cache

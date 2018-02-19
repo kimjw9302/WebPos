@@ -297,6 +297,8 @@ table.dataTable thead .sorting:after {
 .timeline > li {
   position: relative;
   margin-bottom: 20px;
+    top: 0px;
+    left: 0px;
 }
 .timeline > li:before,
 .timeline > li:after {
